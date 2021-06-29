@@ -7,14 +7,14 @@ export default {
         return this
     },
     
-    on(evnet, handler) { // 특정 이벤트에 대한 행동을 정의 -> 이벤트에서 할 일을 만드는 것
+    on(event, handler) { // 특정 이벤트에 대한 행동을 정의 -> 이벤트에서 할 일을 만드는 것
         this.el.addEventListener(event, handler) 
         return this
     },
 
     emit(event, data) { // 스스로 어떤 이벤트를 방출하는 기능 -> 이벤트를 만드는 것
         const evt = new CustomEvent(event, {detail : data}) // TODO add class discription
-        this.el.dispatchEvent(evt) // TODO add function discription
+        this.el.dispatchEvent(evt) // https://developer.mozilla.org/ko/docs/Web/API/EventTarget/dispatchEvent
         return this
     },
 
