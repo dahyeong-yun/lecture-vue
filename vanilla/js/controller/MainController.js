@@ -13,7 +13,7 @@ export default {
       .on('@reset', e => this.onResetForm())
       
     TabView.setup(document.querySelector('#tabs'))
-      .on('@click', e => this.onClickTab(e.detail.tabName))
+      .on('@change', e => this.onChangeTab(e.detail.tabName))
 
     ResultView.setup(document.querySelector('#search-result'))
 
@@ -49,9 +49,8 @@ export default {
     ResultView.render(data)
   },
 
-  onClickTab(tabName){
-    this.selectedTab = tabName
-    this.renderView()
+  onChangeTab(tabName){
+    debugger
   }
 
 }
