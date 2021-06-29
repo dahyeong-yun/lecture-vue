@@ -27,7 +27,8 @@ export default {
   },
 
   onResetForm() {
-    console.log(tag, 'onReset()')
+    console.log(tag, 'onResetForm()')
+    ResultView.hide()
   },
 
   onSearchResult(data) {
