@@ -13,7 +13,7 @@ const data = [
 
 export default {
     list(query) {
-        return new Promise(res => {
+        return new Promise(res => { // TODO promise 동작 방식 이해
             setTimeout(() => {
                 res(data)
             }, 200)

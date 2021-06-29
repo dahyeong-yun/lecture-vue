@@ -21,11 +21,11 @@ FormView.showResetBtn = function (show = true) {
   this.resetEl.style.display = show ? 'block' : 'none'
 }
 
-// 이벤트 바인딩 역할 함수
-// -> 바인딩은 계속 추가 될 수 있으므로 아마 이벤트 자체와 분리한 것 같다.
-// setup() 함수의 추상화 수준을 동일하게 가져가는 효과도 얻을 수 있다. 
+
 /**
- * binding
+ * @description 이벤트 바인딩 역할
+ * 바인딩은 계속 추가 될 수 있으므로 아마 이벤트 자체와 분리한 것 같다.
+ * setup() 함수의 추상화 수준을 동일하게 가져가는 효과도 얻을 수 있다. 
  */
 FormView.bindEvents = function() {
   this.on('submit', e => e.preventDefault())
@@ -34,7 +34,7 @@ FormView.bindEvents = function() {
 }
 
 /**
- * events
+ * @description events
  */
 
 FormView.onKeyup = function(e) {
