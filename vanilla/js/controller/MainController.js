@@ -28,7 +28,7 @@ export default {
 
     ResultView.setup(document.querySelector('#search-result'))
 
-    this.selectedTab = '최근 검색어'
+    this.selectedTab = '추천 검색어'
     
     this.renderView()
   },
@@ -39,8 +39,10 @@ export default {
     
     if(this.selectedTab === '추천 검색어') {
       this.fetchSearchKeyword()
+      HistoryView.hide()
     } else {
       this.fetchSearchHistory()
+      KeywordView.hide()
     }
 
     ResultView.hide()
@@ -84,7 +86,8 @@ export default {
   },
 
   onChangeTab(tabName){
-    debugger
+    this.selectedTab = tabName
+    this.renderView()
   },
 
   onClickKeyword(keyword) {
