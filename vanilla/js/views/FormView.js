@@ -17,8 +17,13 @@ FormView.setup = function (el) {
   return this
 }
 
-FormView.showResetBtn = function (show = true) {
+FormView.showResetBtn = function(show = true) {
   this.resetEl.style.display = show ? 'block' : 'none'
+}
+
+FormView.setInputText = function(text = '') {
+  this.inputEl.value = text
+  this.showResetBtn(this.inputEl.value.length)
 }
 
 
