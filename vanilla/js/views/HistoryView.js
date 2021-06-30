@@ -13,8 +13,21 @@ HistoryView.getKeywordHtml = function(data) {
            <span class="date">${item.date}</span>
            <button class="btn-remove"></button>
           </li>`
-        return html
+        return html 
     }, `<ul class="list">`) + `</ul>`
+}
+
+HistoryView.bindRemoveBtn = function() {
+    Array.from(this.el.querySelectorAll('button.btn-remove')).forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.stopPropagation()
+            this.onRemove(btn.parentElement.dataset.keyword)
+        })
+    })
+}
+
+HistoryView.onRemove = function(keyword) {
+    this.emit('@remove', {keyword})
 }
 
 export default HistoryView
