@@ -4,6 +4,10 @@ const tag = '[KeywordView]'
 
 const KeywordView = Object.create(View)
 
+KeywordView.messages = {
+    NO_KEYWORDS: '추천 검색어가 없습니다.'
+}
+
 KeywordView.setup = function(el) {
   this.init(el)
   // this.bindClickEvent() -> 여기서 render()로 옮긴 이유 : 검색어 DOM이 생기고 난 후에 바인딩을 하기 위해서
@@ -11,7 +15,7 @@ KeywordView.setup = function(el) {
 }
 
 KeywordView.render = function(data) {
-    this.el.innerHTML = data.length ? this.getKeywordHtml(data) : '추천 검색어가 없습니다.'
+    this.el.innerHTML = data.length ? this.getKeywordHtml(data) : KeywordView.messages.NO_KEYWORDS
     this.bindClickEvent()
     this.show()
 }
